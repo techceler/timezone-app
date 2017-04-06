@@ -1,0 +1,11 @@
+<div id="search-component">
+  <h4>The time zone app</h4>
+  <a href="#" (click)="showCountries()">Select a location</a>
+  <div  *ngIf="displayable">
+    <select [ngModel]="selectedCountry" (ngModelChange)="onCountryChange($event)">
+       <option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>
+    </select>
+    <a href="#" (click)="addCountry()">Add Country</a>
+    </div>    
+</div>
+<display-timezones [timezone]="currentCountrytimeZone"></display-timezones>
