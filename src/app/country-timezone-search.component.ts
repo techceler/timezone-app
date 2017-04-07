@@ -22,7 +22,7 @@ export class CountryTimezoneSearchComponent implements OnInit {
     countries: Country[] = [];
 
 
-	currentCountrytimeZone: Countrytimezone = new Countrytimezone();
+	currentCountrytimeZone: Countrytimezone;
 
 	displayable = false; 
   	
@@ -52,7 +52,7 @@ export class CountryTimezoneSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.countries = this.countryDataService.getCountries()
+    this.countries = this.countryDataService.getCountries();
     this.addCountry();
   }
 

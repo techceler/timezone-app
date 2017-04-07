@@ -1,11 +1,12 @@
-<div>
-	<div *ngFor="let timezone of countryTimeZones">
-		{{timezone.utcOffset}}
-		{{timezone.localTime}}
-		{{timezone.countryName}}
+<div style="display: flex;">
+	<div *ngFor="let timezone of countryTimeZones" style="flex: 1;border: 0px solid #000;">
+		<!--<div>{{timezone.utcOffset}}</div>-->
+		<div *ngIf="timezone.localTime" style="padding:10px;"><h2><b>{{timezone.localTime}}</b></h2> </div>
+		<div *ngIf="timezone.localTime" style="padding:5px;"><h4>{{day[timezone.currentDay]}} </h4></div>
+		<div *ngIf="timezone.localTime" style="padding:5px;"><h4>{{timezone.countryName}} </h4></div>
 	</div>	
-	<div>
+	<!--<div>
 		the test div
-	</div>	
+	</div>-->	
 </div>	<!-- Timezone container div --> 
 

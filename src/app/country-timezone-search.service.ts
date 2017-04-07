@@ -30,7 +30,8 @@ export class CountryTimezoneSearchService {
 	
 		console.log(body.data);
 		countryToReturn.countryName = body.data.request[0].query;
-  		countryToReturn.localTime = body.data.time_zone[0].localtime;
+  		countryToReturn.localTime = body.data.time_zone[0].localtime.split(' ')[1];
+  		countryToReturn.currentDay = new Date(body.data.time_zone[0].localtime.split(' ')[0]).getDay();
   		countryToReturn.utcOffset = body.data.time_zone[0].utcOffset;
     	
     	console.log (countryToReturn);
