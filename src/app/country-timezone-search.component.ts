@@ -36,6 +36,7 @@ export class CountryTimezoneSearchComponent implements OnInit {
    addCountry(){
 	    console.log('selected country: ' + this.selectedCountry);
    		if (this.selectedCountry.length>0){
+        this.currentCountrytimeZone = new Countrytimezone();
    			this.countryTimezoneSearchService.search(this.selectedCountry).then(c  => this.currentCountrytimeZone = c);
 			
 

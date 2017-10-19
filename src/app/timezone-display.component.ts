@@ -14,9 +14,8 @@ export class TimezoneDisplayComponent implements OnChanges  {
 
     day : String [] = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
-    ngOnChanges(changes:  SimpleChanges) {
+    ngOnChanges(changes: SimpleChanges) {
 		console.log('Change detected:', changes.timezone.currentValue);
-
-		this.countryTimeZones.push (changes.timezone.currentValue);
+		this.countryTimeZones.push(changes.timezone.currentValue);
 	}
 }
